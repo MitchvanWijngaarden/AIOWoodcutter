@@ -8,6 +8,16 @@ public class Variables {
     private static Location location;
     private static Tree tree;
 
+    public static int getLogs() {
+        return logs;
+    }
+
+    public static void setLogs(int logsNr) {
+        logs = logsNr;
+    }
+
+    private static int logs;
+
     public final static Tile[] DRAYNOR_PATH_TO_OAK_TREE = new Tile[]{new Tile(3101, 3244)};
     public final static Tile[] DRAYNOR_PATH_TO_BANK_FROM_OAK_TREE = new Tile[]{new Tile(3092, 3245)};
 

@@ -3,22 +3,23 @@ package AIOWoodcutter;
 import AIOWoodcutter.data.Location;
 import AIOWoodcutter.data.Tree;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class Methods {
-//    public static String formatNumber(int start) {
-//        DecimalFormat nf = new DecimalFormat("0.0");
-//        double i = start;
-//        if (i >= 1000000) {
-//            return nf.format((i / 1000000)) + "M";
-//        }
-//        if (i >= 1000) {
-//            return nf.format((i / 1000)) + "K";
-//        }
-//        return "" + start;
-//    }
+    public static String formatNumber(int start) {
+        DecimalFormat nf = new DecimalFormat("0.0");
+        double i = start;
+        if (i >= 1000000) {
+            return nf.format((i / 1000000)) + "M";
+        }
+        if (i >= 1000) {
+            return nf.format((i / 1000)) + "K";
+        }
+        return "" + start;
+    }
 
 
     public static String[] locationToStringArray() {

@@ -12,6 +12,8 @@ import AIOWoodcutter.strategies.Bank;
 import AIOWoodcutter.strategies.Walk;
 import AIOWoodcutter.strategies.ChopTree;
 import AIOWoodcutter.ui.UI;
+import org.rev317.min.api.events.MessageEvent;
+import org.rev317.min.api.events.listeners.MessageListener;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ import java.util.ArrayList;
         description = "Chops trees.",
         servers = {"2006rebotted"})
 
-public class Main extends Script implements Paintable {
+public class Main extends Script implements MessageListener, Paintable {
     private ArrayList<Strategy> strategies;
 
     @Override
@@ -59,7 +61,27 @@ public class Main extends Script implements Paintable {
     @Override
     public void paint(Graphics graphics) {
         Graphics2D g = (Graphics2D) graphics;
-        g.drawString("AIOWoodcutter", 554, 223);
-        g.drawString("Runtime: " + Constants.SCRIPT_TIMER.toString(), 553, 241);
+        Color c=new Color(0f,.5f,.5f,.5f );
+        g.setColor(c);
+        g.setBackground(c);
+        g.fillRect(395, 272, 120, 68);
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Arial", 1, 14));
+        g.drawString("AIOWoodcutter", 400, 290);
+        g.setFont(new Font("Arial", 1, 11));
+        g.drawString("Logs(P/H): " + Methods.formatNumber(Variables.getLogs()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getLogs())) + ")", 400, 310);
+        g.drawString("Runtime: " + Constants.SCRIPT_TIMER.toString(), 400, 330);
+    }
+
+    @Override
+    public void messageReceived(MessageEvent message) {
+        switch (message.getType()) {
+            case 0:
+                if (message.getMessage().contains("You manage to get some")) {
+                    Variables.setLogs(Variables.getLogs() + 1);
+                }
+                break;
+        }
     }
 }
