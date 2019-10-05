@@ -64,7 +64,7 @@ public class Main extends Script implements MessageListener, Paintable {
         Color c=new Color(0f,.5f,.5f,.5f );
         g.setColor(c);
         g.setBackground(c);
-        g.fillRect(395, 272, 120, 8);
+        g.fillRect(395, 272, 120, 68);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", 1, 14));
