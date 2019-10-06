@@ -29,19 +29,22 @@ public class HandleLogin implements Strategy {
             Time.sleep(500);
         }
         if (!Game.isLoggedIn()) {
-            if(!typed) {
-                Mouse.getInstance().click(point);
-                Time.sleep(1000);
-                Keyboard.getInstance().sendKeys(Variables.getAccountUsername());
-                Time.sleep(2000);
+            if(Variables.getAccountPassword() != null && Variables.getAccountUsername() != null) {
+                if(!typed) {
+                    Mouse.getInstance().click(point);
+                    Time.sleep(1000);
+                    Keyboard.getInstance().sendKeys(Variables.getAccountUsername());
+                    Time.sleep(2000);
 
-                // Checking again so people don't type their passwords ingame.
-                if(!Game.isLoggedIn()) {
-                    Keyboard.getInstance().sendKeys(Variables.getAccountPassword());
+                    // Checking again so people don't type their passwords ingame.
+                    if(!Game.isLoggedIn()) {
+                        Keyboard.getInstance().sendKeys(Variables.getAccountPassword());
+                    }
+
+                    typed = true;
                 }
-
-                typed = true;
             }
+
             if(typed) {
                 Time.sleep(new SleepCondition() {
                     @Override

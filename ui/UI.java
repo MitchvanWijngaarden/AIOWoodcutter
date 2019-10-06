@@ -113,6 +113,11 @@ public class UI extends JFrame {
                         System.out.println(selectedTree.getName());
                     }
                 }
+                if(!password.getText().equals("") && !username.getText().equals("")) {
+                    Variables.setAccountUsername(username.getText());
+                    Variables.setAccountPassword(password.getText());
+                    System.out.println(password.getText());
+                }
                 if (drop.isSelected()) {
                     Variables.setDrop(true);
                 }
