@@ -1,7 +1,10 @@
 package AIOWoodcutter;
 
+import AIOWoodcutter.data.Constants;
 import AIOWoodcutter.data.Location;
 import AIOWoodcutter.data.Tree;
+import org.parabot.core.reflect.RefClass;
+import org.rev317.min.Loader;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -50,5 +53,11 @@ public class Methods {
         String[] simpleArray = new String[ treesArray.size() ];
         treesArray.toArray( simpleArray );
         return(simpleArray);
+    }
+
+    private static String getMessage(String field) {
+        RefClass clientClass = new RefClass(Loader.getClient());
+        String message = clientClass.getField(field, "Ljava/lang/String;").asString().toLowerCase();
+        return message;
     }
 }

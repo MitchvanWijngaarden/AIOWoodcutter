@@ -10,7 +10,9 @@ public class Walk implements Strategy {
 
     @Override
     public boolean activate() {
-        return !Inventory.isFull() && Variables.getLocation().getBankZone().inTheZone();
+        return Game.isLoggedIn() &&
+                !Inventory.isFull() &&
+                Variables.getLocation().getBankZone().inTheZone();
     }
 
     @Override

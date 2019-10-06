@@ -1,5 +1,6 @@
 package AIOWoodcutter;
 
+import AIOWoodcutter.strategies.HandleLogin;
 import org.parabot.environment.api.interfaces.Paintable;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.Category;
@@ -48,6 +49,7 @@ public class Main extends Script implements MessageListener, Paintable {
         strategies.add(new Walk());
         strategies.add(new Bank());
         strategies.add(new ChopTree());
+        strategies.add(new HandleLogin());
 
         provide(strategies);
         return true;
@@ -82,6 +84,9 @@ public class Main extends Script implements MessageListener, Paintable {
                 if (message.getMessage().contains("You manage to get some")) {
                     Variables.setLogs(Variables.getLogs() + 1);
                     Variables.setExpGained((int) (Variables.getExpGained() + Variables.getTree().getExp()));
+                }
+                if (message.getMessage().contains("Congratulations, you advanced a woodcutting level.")) {
+                    // add in level up to paint
                 }
                 break;
         }
