@@ -65,17 +65,17 @@ public class Variables {
         Variables.drop = drop;
     }
 
-    public static boolean isSell() {
-        return sell;
+    public static boolean isBanking() {
+        return banking;
     }
 
-    public static void setSell(boolean sell) {
-        Variables.sell = sell;
+    public static void setBanking(boolean banking) {
+        Variables.banking = banking;
     }
 
     private static boolean drop;
 
-    private static boolean sell;
+    private static boolean banking;
 
     public static Location getLocation() {
         return location;
