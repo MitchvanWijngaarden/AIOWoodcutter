@@ -18,6 +18,16 @@ public class Variables {
 
     private static int logs;
 
+    public static int getExpGained() {
+        return expGained;
+    }
+
+    public static void setExpGained(int expGained) {
+        Variables.expGained = expGained;
+    }
+
+    private static int expGained;
+
     public final static Tile[] DRAYNOR_PATH_TO_OAK_TREE = new Tile[]{new Tile(3101, 3244)};
     public final static Tile[] DRAYNOR_PATH_TO_BANK_FROM_OAK_TREE = new Tile[]{new Tile(3092, 3245)};
 
