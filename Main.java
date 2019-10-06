@@ -1,5 +1,6 @@
 package AIOWoodcutter;
 
+import AIOWoodcutter.strategies.HandleLogin;
 import org.parabot.environment.api.interfaces.Paintable;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.Category;
@@ -48,6 +49,7 @@ public class Main extends Script implements MessageListener, Paintable {
         strategies.add(new Walk());
         strategies.add(new Bank());
         strategies.add(new ChopTree());
+        strategies.add(new HandleLogin());
 
         provide(strategies);
         return true;
@@ -64,13 +66,14 @@ public class Main extends Script implements MessageListener, Paintable {
         Color c=new Color(0f,.5f,.5f,.5f );
         g.setColor(c);
         g.setBackground(c);
-        g.fillRect(395, 272, 120, 68);
+        g.fillRect(395, 252, 120, 88);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", 1, 14));
-        g.drawString("AIOWoodcutter", 400, 290);
+        g.drawString("AIOWoodcutter", 400, 270);
         g.setFont(new Font("Arial", 1, 11));
-        g.drawString("Logs(P/H): " + Methods.formatNumber(Variables.getLogs()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getLogs())) + ")", 400, 310);
+        g.drawString("Logs(P/H): " + Methods.formatNumber(Variables.getLogs()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getLogs())) + ")", 400, 290);
+        g.drawString("EXP(P/H): " + Methods.formatNumber(Variables.getExpGained()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getExpGained())) + ")", 400, 310);
         g.drawString("Runtime: " + Constants.SCRIPT_TIMER.toString(), 400, 330);
     }
 
@@ -80,6 +83,10 @@ public class Main extends Script implements MessageListener, Paintable {
             case 0:
                 if (message.getMessage().contains("You manage to get some")) {
                     Variables.setLogs(Variables.getLogs() + 1);
+                    Variables.setExpGained((int) (Variables.getExpGained() + Variables.getTree().getExp()));
+                }
+                if (message.getMessage().contains("Congratulations, you advanced a woodcutting level.")) {
+                    // add in level up to paint
                 }
                 break;
         }

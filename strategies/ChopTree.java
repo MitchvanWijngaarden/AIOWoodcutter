@@ -3,6 +3,7 @@ package AIOWoodcutter.strategies;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.framework.SleepCondition;
 import org.parabot.environment.scripts.framework.Strategy;
+import org.rev317.min.api.methods.Game;
 import org.rev317.min.api.methods.Inventory;
 import org.rev317.min.api.methods.Players;
 import org.rev317.min.api.methods.SceneObjects;
@@ -17,7 +18,8 @@ public class ChopTree implements Strategy {
     public boolean activate() {
         tree = tree(); // set the local Variable
 
-        return Players.getMyPlayer().getAnimation() == -1 &&
+        return  Game.isLoggedIn() &&
+                Players.getMyPlayer().getAnimation() == -1 &&
                 !Inventory.isFull() &&
                 tree != null &&
                 Variables.getTree().getChopZone().inTheZone();

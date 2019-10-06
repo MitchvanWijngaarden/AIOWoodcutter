@@ -10,6 +10,10 @@ public enum Location {
     DRAYNOR("Draynor",
             Variables.DRAYNOR_BANK,
             new Tree[] {Tree.OAKTREEDRAYNOR, Tree.WILLOWTREEDRAYNOR}
+    ),
+    SEERS("Seers' Village",
+            Variables.SEERS_BANK,
+            new Tree[] {Tree.MAPLETREESEERS}
     );
 
     private String name;
