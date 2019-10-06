@@ -122,7 +122,7 @@ public class UI extends JFrame {
                     Variables.setDrop(true);
                 }
                 if (bank.isSelected()) {
-                    Variables.setSell(true);
+                    Variables.setBanking(true);
                 }
                 dispose();
             }

@@ -1,6 +1,6 @@
 package AIOWoodcutter;
 
-import AIOWoodcutter.strategies.HandleLogin;
+import AIOWoodcutter.strategies.*;
 import org.parabot.environment.api.interfaces.Paintable;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.Category;
@@ -9,9 +9,6 @@ import org.parabot.environment.scripts.ScriptManifest;
 import org.parabot.environment.scripts.framework.Strategy;
 import AIOWoodcutter.data.Constants;
 import AIOWoodcutter.data.Variables;
-import AIOWoodcutter.strategies.Bank;
-import AIOWoodcutter.strategies.Walk;
-import AIOWoodcutter.strategies.ChopTree;
 import AIOWoodcutter.ui.UI;
 import org.rev317.min.api.events.MessageEvent;
 import org.rev317.min.api.events.listeners.MessageListener;
@@ -47,7 +44,12 @@ public class Main extends Script implements MessageListener, Paintable {
 
         strategies = new ArrayList<>();
         strategies.add(new Walk());
-        strategies.add(new Bank());
+        if(Variables.isBanking()) {
+            strategies.add(new Bank());
+        }
+        if(Variables.isDrop()) {
+            strategies.add(new Drop());
+        }
         strategies.add(new ChopTree());
         strategies.add(new HandleLogin());
 
