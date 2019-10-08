@@ -33,9 +33,11 @@ public class HandleLogin implements Strategy {
                 if(!typed) {
                     Mouse.getInstance().click(point);
                     Time.sleep(1000);
+                    clearInput();
                     Keyboard.getInstance().sendKeys(Variables.getAccountUsername());
                     Time.sleep(2000);
 
+                    clearInput();
                     // Checking again so people don't type their passwords ingame.
                     if(!Game.isLoggedIn()) {
                         Keyboard.getInstance().sendKeys(Variables.getAccountPassword());
@@ -52,10 +54,19 @@ public class HandleLogin implements Strategy {
                         return Game.isLoggedIn();
                     }
                 }, 5000);
+                Mouse.getInstance().click(point);
+                Time.sleep(1000);
                 Keyboard.getInstance().clickKey(KeyEvent.VK_ENTER);
                 Time.sleep(1000);
                 Keyboard.getInstance().clickKey(KeyEvent.VK_ENTER);
             }
+        }
+    }
+
+    private void clearInput() {
+        for(int i = 0; i < 30; i ++) {
+            Keyboard.getInstance().clickKey(KeyEvent.VK_DELETE);
+            Time.sleep(100);
         }
     }
 }

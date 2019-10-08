@@ -2,6 +2,7 @@ package AIOWoodcutter.data;
 
 import org.rev317.min.api.wrappers.Tile;
 import AIOWoodcutter.Zone;
+import org.rev317.min.api.wrappers.TilePath;
 
 public class Variables {
 
@@ -39,9 +40,27 @@ public class Variables {
     public final static Tile[] DRAYNOR_PATH_TO_WILLOW_TREE = new Tile[]{new Tile(3086, 3238)};
     public final static Tile[] DRAYNOR_PATH_TO_BANK_FROM_WILLOW_TREE = new Tile[]{new Tile(3092, 3245)};
 
+    public static TilePath pathToWalk;
+
+    // Varrock West
+
+    public final static Tile[] VARROCK_WEST_PATH_TO_OAK = new Tile[]{
+            new Tile(3177, 3428),
+            new Tile(3168, 3422),
+            new Tile(3166, 3415)
+    };
+
+    public final static Tile[] VARROCK_WEST_PATH_TO_BANK_FROM_OAK = new Tile[]{
+            new Tile(3166, 3415),
+            new Tile(3168, 3422),
+            new Tile(3177, 3428),
+            new Tile(3185, 3436)
+    };
+
+
     // Seers' village
-    public final static Tile[] SEERS_PATH_TO_MAPLE_TREE = new Tile[]{new Tile(2731, 3499)};
-    public final static Tile[] SEERS_PATH_TO_BANK_FROM_MAPLE_TREE = new Tile[]{new Tile(2726, 3493)};
+    public final static Tile[] SEERS_PATH_TO_MAPLE_TREE = new Tile[]{new Tile(2732, 3500)};
+    public final static Tile[] SEERS_PATH_TO_BANK_FROM_MAPLE_TREE = new Tile[]{new Tile(2727, 3493)};
 
     // Zones
     // Draynor
@@ -50,12 +69,20 @@ public class Variables {
     public final static Zone DRAYNOR_BANK = new Zone(new Tile(3088, 3246), new Tile(3097, 3240));
 
     // Seers' village
-    public final static Zone SEERS_MAPLE_ZONE = new Zone(new Tile(2720, 3502), new Tile(2733, 3497));
-    public final static Zone SEERS_BANK = new Zone(new Tile(2721, 3493), new Tile(2729, 3486));
+    public final static Zone SEERS_MAPLE_ZONE = new Zone(new Tile(2720, 3503), new Tile(2735, 3497));
+    public final static Zone SEERS_BANK = new Zone(new Tile(2721, 3493), new Tile(2729, 3490));
+
+    // Varrock West
+    public final static Zone VARROCK_WEST_BANK = new Zone(new Tile(3180, 3447), new Tile(3191, 3433));
+    public final static Zone VARROCK_WEST_OAK_ZONE = new Zone(new Tile(3157, 3422), new Tile(3173, 3403));
+
+
 
     // Tree object ID's
+    public final static int[] NORMAL_TREE_IDS = new int[]{1276};
     public final static int[] OAK_TREE_IDS = new int[]{1281};
     public final static int[] WILLOW_TREE_IDS = new int[]{5551, 1308, 5553, 5552};
+    public final static int[] MAPLE_TREE_IDS = new int[]{1307};
 
     public static boolean isDrop() {
         return drop;
