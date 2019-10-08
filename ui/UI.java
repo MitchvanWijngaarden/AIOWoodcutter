@@ -1,9 +1,5 @@
 package AIOWoodcutter.ui;
 
-/**
- * Created by Mitch on 10/04/2015.
- */
-
 import AIOWoodcutter.Methods;
 import AIOWoodcutter.data.Location;
 import AIOWoodcutter.data.Tree;
@@ -11,11 +7,8 @@ import AIOWoodcutter.data.Variables;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 public class UI extends JFrame {
     private final ButtonGroup woodcutOptionButtonGroup = new ButtonGroup();
@@ -26,6 +19,7 @@ public class UI extends JFrame {
     private JRadioButton drop = new JRadioButton("Drop");
     private JTextField username = new JTextField();
     private JPasswordField password = new JPasswordField();
+    private JCheckBox birdsNest = new JCheckBox();
 
     public UI() {
         setTitle("AIO Woodcutter");
@@ -88,6 +82,18 @@ public class UI extends JFrame {
         drop.setBounds(20, 160, 80, 20);
         fletchPanel.add(drop);
 
+        JLabel lblBirdsNest = new JLabel("Bird nests");
+        lblBirdsNest.setBounds(200, 120, 150, 20);
+        fletchPanel.add(lblBirdsNest);
+
+        birdsNest.setBounds(195, 140, 20, 20);
+        birdsNest.setSelected(true);
+        fletchPanel.add(birdsNest);
+
+        JLabel lblBirdsNestCheckBox = new JLabel("Pickup");
+        lblBirdsNestCheckBox.setBounds(215, 140, 150, 20);
+        fletchPanel.add(lblBirdsNestCheckBox);
+
         location.addActionListener (new ActionListener () {
             public void actionPerformed(ActionEvent e) {
                 for (Location loc : Location.values()) {
@@ -116,13 +122,15 @@ public class UI extends JFrame {
                 if(!password.getText().equals("") && !username.getText().equals("")) {
                     Variables.setAccountUsername(username.getText());
                     Variables.setAccountPassword(password.getText());
-                    System.out.println(password.getText());
                 }
                 if (drop.isSelected()) {
                     Variables.setDrop(true);
                 }
                 if (bank.isSelected()) {
                     Variables.setBanking(true);
+                }
+                if (birdsNest.isSelected()) {
+                    Variables.setPickupBirdNests(true);
                 }
                 dispose();
             }

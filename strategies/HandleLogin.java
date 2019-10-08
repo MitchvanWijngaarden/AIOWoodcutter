@@ -14,19 +14,17 @@ import java.awt.event.KeyEvent;
 public class HandleLogin implements Strategy {
 
     private Point point = new Point(432, 282);
-    private Point point2 = new Point(368, 265);
+    private Point point2 = new Point(328, 324);
     private Boolean typed = false;
 
     @Override
     public boolean activate() {
-        return !Game.isLoggedIn() || Game.getOpenBackDialogId() == 4900;
+        return !Game.isLoggedIn() || Game.getOpenBackDialogId() == 15812;
     }
 
     public void execute() {
-        if (Game.isLoggedIn() && Game.getOpenBackDialogId() == 4900) {
-            Time.sleep(1000);
-            org.rev317.min.api.methods.Menu.sendAction(679, 17825792, 113, 4907, 1088, 1);
-            Time.sleep(500);
+        if (Game.isLoggedIn() && Game.getOpenInterfaceId() == 15812) {
+            Mouse.getInstance().click(point2);
         }
         if (!Game.isLoggedIn()) {
             if(Variables.getAccountPassword() != null && Variables.getAccountUsername() != null) {
