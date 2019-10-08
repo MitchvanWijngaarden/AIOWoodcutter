@@ -1,5 +1,6 @@
 package AIOWoodcutter.strategies;
 
+import com.sun.org.apache.bcel.internal.generic.VariableLengthInstruction;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.framework.SleepCondition;
 import org.parabot.environment.scripts.framework.Strategy;
@@ -29,6 +30,7 @@ public class ChopTree implements Strategy {
     public void execute() {
         //Chop the tree
         tree.interact(SceneObjects.Option.CHOP_DOWN);
+        Variables.setBotStatus("chopping " + Variables.getTree().getName());
         Time.sleep(1000);
         //Wait for the Player to chop the Tree
         Time.sleep(new SleepCondition() {
