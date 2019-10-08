@@ -4,7 +4,7 @@ before_script:
 production:
   script:
     - mvn -U package -Dsettings.security=/home/ci/settings.xml
-    - java -cp /home/ci/allatori/allatori.jar com.allatori.Obfuscate ./target/classes/config.xml
+    - java -cp /home/ci/allatori/allatori.jar com.allatori.Obfuscate ./src/main/resources/config.xml
   type: deploy
   only:
     - master
