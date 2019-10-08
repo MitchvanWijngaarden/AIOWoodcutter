@@ -33,7 +33,7 @@ public enum Tree {
             Variables.NORMAL_TREE_IDS,
             25.0,
             1512),
-    OAKTREEVWEST("Oak tree VWest",
+    OAKTREEVWEST("Oak VWest",
             Variables.VARROCK_WEST_OAK_ZONE,
             Variables.VARROCK_WEST_PATH_TO_BANK_FROM_OAK,
             Variables.VARROCK_WEST_PATH_TO_OAK,
