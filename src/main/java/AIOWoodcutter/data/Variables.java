@@ -12,6 +12,16 @@ public class Variables {
     private static String accountUsername;
     private static String accountPassword;
 
+    private static String botStatus = "awaiting start";
+
+    public static String getBotStatus() {
+        return botStatus;
+    }
+
+    public static void setBotStatus(String botStatus) {
+        Variables.botStatus = botStatus;
+    }
+
     public static int getLogs() {
         return logs;
     }

@@ -18,7 +18,7 @@ public class Walk implements Strategy {
     @Override
     public void execute() {
         Variables.pathToWalk = new TilePath(Variables.getTree().getPathToTree());
-
+        Variables.setBotStatus("walking to " + Variables.getTree().getName());
         while (Variables.pathToWalk != null && !Variables.pathToWalk.hasReached()) {
             Variables.pathToWalk.traverse();
             Time.sleep(1000, 2000);

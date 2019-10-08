@@ -18,12 +18,12 @@ public class Bank implements Strategy {
     @Override
     public void execute() {
         Variables.pathToWalk = new TilePath(Variables.getTree().getPathToBank());
-
+        Variables.setBotStatus("walking to bank");
         while (Variables.pathToWalk != null && !Variables.pathToWalk.hasReached()) {
             Variables.pathToWalk.traverse();
             Time.sleep(1000, 2000);
         }
-
+        Variables.setBotStatus("banking logs");
         depositLogs();
     }
     public void depositLogs() {
