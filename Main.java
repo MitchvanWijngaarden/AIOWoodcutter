@@ -76,12 +76,12 @@ public class Main extends Script implements MessageListener, Paintable {
     public void paint(Graphics graphics) {
         Graphics2D g = (Graphics2D) graphics;
 
-        Color c2=new Color(0f,.749f,1.0f,.5f );
+        Color c2=new Color(0f,.749f,1.0f,.3f );
         g.setColor(c2);
         g.setBackground(c2);
         g.fillRect(355, 232, 160, 20);
 
-        Color c=new Color(.686f,.933f,.933f,.5f );
+        Color c=new Color(.686f,.933f,.933f,.3f );
         g.setColor(c);
         g.setBackground(c);
         g.fillRect(355, 252, 160, 85);

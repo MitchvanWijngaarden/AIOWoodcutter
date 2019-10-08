@@ -16,12 +16,12 @@ public class PickupBirdNest implements Strategy {
                 Players.getMyPlayer().getAnimation() == -1 &&
                 !Inventory.isFull() &&
                 Variables.getTree().getChopZone().inTheZone() &&
-                GroundItems.getNearest(5071, 5072, 5073, 5074, 5075, 5076, 7414, 13654).length > 0;
+                GroundItems.getNearest(5070,5071, 5072, 5073, 5074, 5075, 7413, 13653).length > 0;
     }
 
     @Override
     public void execute() {
-        GroundItem[] birdNests = GroundItems.getNearest(5071, 5072, 5073, 5074, 5075, 5076, 7414, 13654);
+        GroundItem[] birdNests = GroundItems.getNearest(5070, 5071, 5072, 5073, 5074, 5075, 7413, 13653);
         Variables.setBotStatus("picking up nest");
         for (GroundItem birdNest : birdNests) {
             birdNest.take();
