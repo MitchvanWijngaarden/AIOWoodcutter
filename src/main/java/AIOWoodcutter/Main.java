@@ -1,15 +1,15 @@
 package AIOWoodcutter;
 
+import AIOWoodcutter.data.Constants;
+import AIOWoodcutter.data.Variables;
 import AIOWoodcutter.strategies.*;
+import AIOWoodcutter.ui.UI;
 import org.parabot.environment.api.interfaces.Paintable;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.Category;
 import org.parabot.environment.scripts.Script;
 import org.parabot.environment.scripts.ScriptManifest;
 import org.parabot.environment.scripts.framework.Strategy;
-import AIOWoodcutter.data.Constants;
-import AIOWoodcutter.data.Variables;
-import AIOWoodcutter.ui.UI;
 import org.rev317.min.api.events.MessageEvent;
 import org.rev317.min.api.events.listeners.MessageListener;
 import java.awt.*;
