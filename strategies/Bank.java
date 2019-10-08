@@ -17,11 +17,13 @@ public class Bank implements Strategy {
 
     @Override
     public void execute() {
-        TilePath path = new TilePath(Variables.getTree().getPathToBank());
-        while (path != null && !path.hasReached()) {
-            path.traverse();
+        Variables.pathToWalk = new TilePath(Variables.getTree().getPathToBank());
+
+        while (Variables.pathToWalk != null && !Variables.pathToWalk.hasReached()) {
+            Variables.pathToWalk.traverse();
             Time.sleep(1000, 2000);
         }
+
         depositLogs();
     }
     public void depositLogs() {

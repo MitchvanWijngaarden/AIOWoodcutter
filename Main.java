@@ -12,7 +12,6 @@ import AIOWoodcutter.data.Variables;
 import AIOWoodcutter.ui.UI;
 import org.rev317.min.api.events.MessageEvent;
 import org.rev317.min.api.events.listeners.MessageListener;
-
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -52,6 +51,14 @@ public class Main extends Script implements MessageListener, Paintable {
         }
         strategies.add(new ChopTree());
         strategies.add(new HandleLogin());
+        strategies.add(new HandleDisconnect());
+
+        // add birds nest 5072
+        //5070
+        //5074
+        //5075
+        // look for other ids
+
 
         provide(strategies);
         return true;

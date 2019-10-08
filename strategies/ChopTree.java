@@ -40,16 +40,13 @@ public class ChopTree implements Strategy {
     }
 
     private SceneObject tree(){
-        //Loop through all loaded Objects and return the once that match the TREE_IDS.
         for(SceneObject tree : SceneObjects.getNearest(Variables.getTree().getTreeIds())){
-            //Check if the Object is around.
             if(tree != null){
                 if(Variables.getTree().getChopZone().inTheZoneObject(tree)) {
                     return tree;
                 }
             }
         }
-        //Return null when no Object is Found.
         return null;
     }
 }

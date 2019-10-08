@@ -11,6 +11,10 @@ public enum Location {
             Variables.DRAYNOR_BANK,
             new Tree[] {Tree.OAKTREEDRAYNOR, Tree.WILLOWTREEDRAYNOR}
     ),
+    VWEST("Varrock west",
+            Variables.VARROCK_WEST_BANK,
+            new Tree[] {Tree.NORMALTREEVWEST, Tree.OAKTREEVWEST}
+    ),
     SEERS("Seers' Village",
             Variables.SEERS_BANK,
             new Tree[] {Tree.MAPLETREESEERS}
