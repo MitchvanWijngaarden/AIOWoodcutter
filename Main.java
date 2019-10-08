@@ -43,6 +43,9 @@ public class Main extends Script implements MessageListener, Paintable {
 
         strategies = new ArrayList<>();
         strategies.add(new Walk());
+        if(Variables.getPickupBirdNests()) {
+            strategies.add(new PickupBirdNest());
+        }
         if(Variables.isBanking()) {
             strategies.add(new Bank());
         }

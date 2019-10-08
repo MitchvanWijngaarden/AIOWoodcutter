@@ -104,6 +104,16 @@ public class Variables {
 
     private static boolean banking;
 
+    public static boolean getPickupBirdNests() {
+        return birdNests;
+    }
+
+    public static void setPickupBirdNests(boolean birdNests) {
+        Variables.birdNests = birdNests;
+    }
+
+    private static boolean birdNests;
+
     public static Location getLocation() {
         return location;
     }
