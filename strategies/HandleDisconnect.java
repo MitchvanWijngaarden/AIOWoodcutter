@@ -18,7 +18,7 @@ public class HandleDisconnect implements Strategy {
 
     @Override
     public void execute() {
-        System.out.println("Do we enter this strategy?");
+        Variables.setBotStatus("handling dc");
         Variables.pathToWalk = new TilePath(Variables.getTree().getPathToBank());
 
         while (Variables.pathToWalk != null && !Variables.pathToWalk.hasReached()) {

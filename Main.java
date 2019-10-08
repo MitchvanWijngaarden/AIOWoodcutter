@@ -75,18 +75,26 @@ public class Main extends Script implements MessageListener, Paintable {
     @Override
     public void paint(Graphics graphics) {
         Graphics2D g = (Graphics2D) graphics;
-        Color c=new Color(0f,.5f,.5f,.5f );
+
+        Color c2=new Color(0f,.749f,1.0f,.5f );
+        g.setColor(c2);
+        g.setBackground(c2);
+        g.fillRect(355, 232, 160, 20);
+
+        Color c=new Color(.686f,.933f,.933f,.5f );
         g.setColor(c);
         g.setBackground(c);
-        g.fillRect(395, 252, 120, 88);
+        g.fillRect(355, 252, 160, 85);
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Arial", 1, 14));
-        g.drawString("AIOWoodcutter", 400, 270);
+        g.drawString("AIOWoodcutter", 360, 247);
         g.setFont(new Font("Arial", 1, 11));
-        g.drawString("Logs(P/H): " + Methods.formatNumber(Variables.getLogs()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getLogs())) + ")", 400, 290);
-        g.drawString("EXP(P/H): " + Methods.formatNumber(Variables.getExpGained()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getExpGained())) + ")", 400, 310);
-        g.drawString("Runtime: " + Constants.SCRIPT_TIMER.toString(), 400, 330);
+        g.drawString("Status: " + Variables.getBotStatus(), 360, 270);
+        g.drawString("Logs(P/H): " + Methods.formatNumber(Variables.getLogs()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getLogs())) + ")", 360, 290);
+        g.drawString("EXP(P/H): " + Methods.formatNumber(Variables.getExpGained()) + "(" + Methods.formatNumber(Constants.SCRIPT_TIMER.getPerHour(Variables.getExpGained())) + ")", 360, 310);
+        g.drawString("Runtime: " + Constants.SCRIPT_TIMER.toString(), 360, 330);
+
     }
 
     @Override

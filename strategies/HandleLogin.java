@@ -23,6 +23,7 @@ public class HandleLogin implements Strategy {
     }
 
     public void execute() {
+        Variables.setBotStatus("logging in");
         if (Game.isLoggedIn() && Game.getOpenInterfaceId() == 15812) {
             Mouse.getInstance().click(point2);
         }
