@@ -1,7 +1,7 @@
 package AIOWoodcutter.data;
 
-import org.rev317.min.api.wrappers.Tile;
 import AIOWoodcutter.Zone;
+import org.rev317.min.api.wrappers.Tile;
 import org.rev317.min.api.wrappers.TilePath;
 
 public class Variables {
@@ -11,6 +11,9 @@ public class Variables {
 
     private static String accountUsername;
     private static String accountPassword;
+
+    public final static String DEFAULT_DIR = System.getProperty("user.home") + System.getProperty("file.separator") + "Parabot" + System.getProperty("file.separator") + "AIOWoodcutter";
+    public final static String FSEP = System.getProperty("file.separator");
 
     private static String botStatus = "awaiting start";
 
