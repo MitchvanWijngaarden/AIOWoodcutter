@@ -1,7 +1,6 @@
 package AIOWoodcutter.strategies;
 
 import AIOWoodcutter.data.Variables;
-import org.parabot.core.reflect.RefClass;
 import org.parabot.environment.api.utils.Time;
 import org.parabot.environment.scripts.framework.Strategy;
 import org.rev317.min.api.methods.Game;

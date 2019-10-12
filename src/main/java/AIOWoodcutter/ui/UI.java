@@ -15,6 +15,7 @@ public class UI extends JFrame {
     private JPanel contentPane;
     private JComboBox location = new JComboBox();
     private JComboBox treeSelect = new JComboBox();
+    private JComboBox accountSelect = new JComboBox();
     private JRadioButton bank = new JRadioButton("Bank");
     private JRadioButton drop = new JRadioButton("Drop");
     private JTextField username = new JTextField();
@@ -39,17 +40,26 @@ public class UI extends JFrame {
         tabbedPane.addTab("Woodcutting", null, fletchPanel, null);
         fletchPanel.setLayout(null);
 
-        JLabel lblUsername = new JLabel("Username:");
-        lblUsername.setBounds(20, 20, 73, 20);
-        fletchPanel.add(lblUsername);
-        username.setBounds(20, 40, 150, 20);
-        fletchPanel.add(username);
+//        JLabel lblUsername = new JLabel("Username:");
+//        lblUsername.setBounds(20, 20, 73, 20);
+//        fletchPanel.add(lblUsername);
+//        username.setBounds(20, 40, 150, 20);
+//        fletchPanel.add(username);
+//
+//        JLabel lblPassword = new JLabel("Password:");
+//        lblPassword.setBounds(20, 60, 73, 20);
+//        fletchPanel.add(lblPassword);
+//        password.setBounds(20, 80, 150, 20);
+//        fletchPanel.add(password);
 
-        JLabel lblPassword = new JLabel("Password:");
-        lblPassword.setBounds(20, 60, 73, 20);
-        fletchPanel.add(lblPassword);
-        password.setBounds(20, 80, 150, 20);
-        fletchPanel.add(password);
+        JLabel lblAccount = new JLabel("Account");
+        lblAccount.setBounds(20, 20, 73, 20);
+        fletchPanel.add(lblAccount);
+
+        accountSelect.setModel(
+                new DefaultComboBoxModel(Methods.getAccounts()));
+        accountSelect.setBounds(20, 40, 150, 20);
+        fletchPanel.add(accountSelect);
 
         JLabel lblLocation = new JLabel("Location");
         lblLocation.setBounds(200, 20, 73, 20);
@@ -104,21 +114,28 @@ public class UI extends JFrame {
                 }
             }
         });
-
         JButton start = new JButton("Start");
         start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 for (Location loc : Location.values()) {
                     if (loc.getName().equalsIgnoreCase(location.getSelectedItem().toString())) {
                         Variables.setLocation(loc);
+                        for (Tree selectedTree : loc.getTrees()) {
+                            if (selectedTree.getName().equalsIgnoreCase(treeSelect.getSelectedItem().toString())) {
+                                Variables.setTree(selectedTree);
+                            }
+                        }
                     }
                 }
-                for (Tree selectedTree : Tree.values()) {
-                    if (selectedTree.getName().equalsIgnoreCase(treeSelect.getSelectedItem().toString())) {
-                        Variables.setTree(selectedTree);
-                        System.out.println(selectedTree.getName());
-                    }
-                }
+//                for (Tree selectedTree : Tree.values()) {
+//                    if (selectedTree.getName().equalsIgnoreCase(treeSelect.getSelectedItem().toString())) {
+//                        Variables.setTree(selectedTree);
+//                        System.out.println(selectedTree.getName());
+//                    }
+//                }
+                String accName = accountSelect.getSelectedItem().toString();
+                System.out.println(Methods.getAccountPassword(accName));
+
                 if(!password.getText().equals("") && !username.getText().equals("")) {
                     Variables.setAccountUsername(username.getText());
                     Variables.setAccountPassword(password.getText());

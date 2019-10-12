@@ -12,7 +12,14 @@ import org.parabot.environment.scripts.ScriptManifest;
 import org.parabot.environment.scripts.framework.Strategy;
 import org.rev317.min.api.events.MessageEvent;
 import org.rev317.min.api.events.listeners.MessageListener;
+
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +29,7 @@ import java.util.ArrayList;
         author = "Mitch",
         name = "AIOWoodcutter",
         category = Category.WOODCUTTING,
-        version = 0.1,
+        version = 0.21,
         description = "Chops trees.",
         servers = {"2006rebotted"})
 
@@ -31,6 +38,11 @@ public class Main extends Script implements MessageListener, Paintable {
 
     @Override
     public boolean onExecute() {
+
+        File directory = new File(Variables.DEFAULT_DIR + Variables.FSEP + "accounts");
+        if (!directory.exists())
+            directory.mkdirs();
+
 
         UI ui = new UI();
         ui.setVisible(true);
