@@ -4,7 +4,7 @@
 
     <groupId>src</groupId>
     <artifactId>aio-woodcutter</artifactId>
-    <version>1.9</version>
+    <version>1</version>
 
     <properties>
         <jdk.version>1.7</jdk.version>
@@ -32,7 +32,7 @@
     </dependencies>
 
     <build>
-        <finalName>1000202</finalName>
+        <finalName>1000204</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
