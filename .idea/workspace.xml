@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../OpenRSC" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../RS-2009" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../darkan-game-client" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="1RvpWuwsoEm4dnyo9OOPs8Vk8c7" />
+</project>
