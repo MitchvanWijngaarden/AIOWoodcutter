@@ -133,6 +133,7 @@ public class UI extends JFrame {
 //                        System.out.println(selectedTree.getName());
 //                    }
 //                }
+
                 String accName = accountSelect.getSelectedItem().toString();
                 System.out.println(Methods.getAccountPassword(accName));
 

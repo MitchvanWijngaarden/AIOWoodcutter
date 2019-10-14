@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cbb5c0b8-4398-4778-9368-80ddc66c643b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/AIOWoodcutter/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AIOWoodcutter/ui/UI.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$/../../OpenRSC" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../RS-2009" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$/../../darkan-game-client" value="PREVIEW" />
-      </map>
+  <component name="ProjectId" id="1RvpWuwsoEm4dnyo9OOPs8Vk8c7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
     </option>
   </component>
-  <component name="ProjectId" id="1RvpWuwsoEm4dnyo9OOPs8Vk8c7" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
 </project>
